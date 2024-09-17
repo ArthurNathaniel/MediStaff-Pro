@@ -1,4 +1,4 @@
-#Description for the Software: MediStaff Pro
+Description for the Software: MediStaff Pro
 
 MediStaff Pro is a comprehensive hospital management tool designed to optimize staff onboarding, streamline weekly duty scheduling, and ensure accessibility across all devices. With a focus on efficiency and ease of use, this software empowers administrators and staff to manage hospital operations seamlessly.
 
