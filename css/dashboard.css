@@ -1,0 +1,31 @@
+.dashboard_all {
+  padding: 0 10%;
+}
+.dashboard_title {
+  margin-top: 50px;
+}
+.dashboard_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.dash_box {
+  background-color: #fff;
+  margin-top: 50px;
+  padding: 0 5%;
+  padding-block: 40px;
+}
+
+.dash_box canvas {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+
+@media only screen and (max-width: 1110px) {
+  .dashboard_grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
