@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    font-family: "Bricolage Grotesque", sans-serif;
 }
 
 body {
@@ -11,6 +12,125 @@ body {
     background-color: #E9E9E9;
 }
 
-/* h1,h2,h3,h4,h5,h6{
-    font-family: "Bricolage Grotesque", sans-serif;
-} */
+.logo{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-image: url(../images/logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar_all {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 210;
+    padding: 0 10%;
+    position: sticky;
+    top: 0;
+    z-index: 454;
+    padding-block: 5px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+   
+}
+
+
+
+.mobile a {
+    padding: 15px;
+    color: #000;
+    /* text-transform: uppercase; */
+}
+
+
+
+#toggleButton {
+    background-color: transparent;
+    border: none;
+}
+
+#toggleButton i{
+    color: #000;
+    font-size: 20px;
+}
+
+.mobile {
+    display: none;
+}
+
+.mobile {
+    position: absolute;
+    top: 110px;
+    z-index: 4554;
+    right: 0;
+    width: 250px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    display: none;
+    height: 100vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 5px;
+}
+
+.mobile a {
+    border-bottom: 1px solid #000;
+    width: 100%;
+    padding: 0 10%;
+    padding-block: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.active {
+    color: #ffffff !important; /* Active link color */
+    background-color: #0064F7; /* Active background */
+    padding: 5px;
+  
+  }
+
+  .active a{
+    color: #fff !important;
+  }
+  
+  .forms{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.forms input{
+    height: 50px;
+    width: 100%;
+    border: 2px solid #0064F7;
+    border-radius: 7px;
+    padding-left: 3%;
+}
+
+.forms select{
+    height: 50px;
+    width: 100%;
+    border: 2px solid #0064F7;
+    border-radius: 7px;
+    padding-left: 3%;
+}
+
+.forms button{
+    width: 100%;
+    height: 50px;
+    background-color: #0064F7;
+    border: none;
+    color: #fff;
+    border-radius: 7px;
+}
+
+input{
+    outline: none;
+}
+
+select{
+    outline: none;
+}

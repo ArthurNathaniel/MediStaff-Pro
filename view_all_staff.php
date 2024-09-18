@@ -55,61 +55,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_staff'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Staff Members</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        table, th, td {
-            border: 1px solid black;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
-
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            width: 50%;
-        }
-
-        .close {
-            float: right;
-            cursor: pointer;
-            font-size: 20px;
-        }
-    </style>
+    <?php include 'cdn.php'?>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/onboard_staff.css">
 </head>
 <body>
-    <h2>All Staff Members</h2>
+<?php include 'admin_navbar.php'?>
+<div class="onboard">
+  <div class="forms">
+  <h1>All Staff Members</h1>
+  </div>
 
     <table>
         <thead>
@@ -141,9 +96,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_staff'])) {
                         <td><?php echo htmlspecialchars($staff['role']); ?></td>
                         <td><?php echo htmlspecialchars($staff['department']); ?></td>
                         <td><?php echo htmlspecialchars($staff['gender']); ?></td> <!-- Display Gender -->
-                        <td>
-                            <button onclick="openEditModal('<?php echo $staff['id']; ?>', '<?php echo htmlspecialchars($staff['full_name']); ?>', '<?php echo htmlspecialchars($staff['phone_number']); ?>', '<?php echo htmlspecialchars($staff['role']); ?>', '<?php echo htmlspecialchars($staff['department']); ?>', '<?php echo htmlspecialchars($staff['gender']); ?>')">Edit</button>
-                            <button onclick="openDeleteModal('<?php echo $staff['id']; ?>')">Delete</button>
+                        <td class="actions">
+                            <button onclick="openEditModal('<?php echo $staff['id']; ?>', '<?php echo htmlspecialchars($staff['full_name']); ?>', '<?php echo htmlspecialchars($staff['phone_number']); ?>', '<?php echo htmlspecialchars($staff['role']); ?>', '<?php echo htmlspecialchars($staff['department']); ?>', '<?php echo htmlspecialchars($staff['gender']); ?>')"><i class="fa-solid fa-user-pen"></i></button>
+                            <button onclick="openDeleteModal('<?php echo $staff['id']; ?>')"><i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -162,23 +117,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_staff'])) {
             <h2>Edit Staff Member</h2>
             <form method="POST" action="view_all_staff.php">
                 <input type="hidden" name="staff_id" id="edit_staff_id">
-                
+                <div class="forms">
+                    
                 <label for="full_name">Full Name:</label>
-                <input type="text" name="full_name" id="edit_full_name" required><br><br>
+                <input type="text" name="full_name" id="edit_full_name" required>
+                </div>
                 
-                <label for="phone_number">Phone Number:</label>
-                <input type="text" name="phone_number" id="edit_phone_number" required><br><br>
+              <div class="forms">
+              <label for="phone_number">Phone Number:</label>
+              <input type="text" name="phone_number" id="edit_phone_number" required>
+              </div>
                 
-                <label for="role">Role:</label>
+               <div class="forms">
+               <label for="role">Role:</label>
                 <select name="role" id="edit_role" required>
                     <option value="" selected hidden>Select Role</option>
                     <option value="Nurse">Nurse</option>
                     <option value="Doctor">Doctor</option>
                     <option value="Midwife">Midwife</option>
                     <option value="Other">Other</option>
-                </select><br><br>
+                </select>
+               </div>
                 
-                <label for="department">Department:</label>
+               <div class="forms">
+               <label for="department">Department:</label>
                 <select name="department" id="edit_department" required>
                     <option value="" selected hidden>Select Department</option>
                     <option value="Emergency">Emergency</option>
@@ -186,16 +148,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_staff'])) {
                     <option value="Surgery">Surgery</option>
                     <option value="Maternity">Maternity</option>
                     <option value="Radiology">Radiology</option>
-                </select><br><br>
+                </select>
+               </div>
 
-                <label for="gender">Gender:</label> <!-- Gender Selection -->
+              <div class="forms">
+              <label for="gender">Gender:</label> <!-- Gender Selection -->
                 <select name="gender" id="edit_gender" required>
                     <option value="" selected hidden>Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
-                </select><br><br>
+                </select>
+              </div>
+                <div class="forms">
+                    <button type="submit" name="edit_staff" >Save Changes</button>
+                </div>
                 
-                <input type="submit" name="edit_staff" value="Save Changes">
             </form>
         </div>
     </div>
@@ -213,7 +180,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_staff'])) {
             </form>
         </div>
     </div>
-
+    </div>
     <script>
         // Functions to handle Edit modal
         function openEditModal(id, fullName, phoneNumber, role, department, gender) {

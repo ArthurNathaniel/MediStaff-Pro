@@ -39,35 +39,53 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff Onboarding</title>
+    <?php include 'cdn.php'?>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/onboard_staff.css">
 </head>
 <body>
-    <h2>Staff Onboarding</h2>
+<?php include 'admin_navbar.php'?>
+  <div class="onboard_staff_all">
+  <div class="forms">
+  <h2>Staff Onboarding</h2>
+  </div>
     <form method="POST" action="onboard_staff.php">
-        <label for="full_name">Full Name:</label>
-        <input type="text" name="full_name" required><br><br>
+       <div class="forms">
+       <label for="full_name">Full Name:</label>
+       <input type="text" name="full_name" required>
+       </div>
 
+        <div class="forms">
         <label for="email">Email:</label>
-        <input type="email" name="email" required><br><br>
+        <input type="email" name="email" required>
+        </div>
 
-        <label for="phone_number">Phone Number:</label>
-        <input type="text" name="phone_number" required><br><br>
+       <div class="forms">
+       <label for="phone_number">Phone Number:</label>
+       <input type="text" name="phone_number" required>
+       </div>
 
-        <label for="gender">Gender:</label>
+      <div class="forms">
+      <label for="gender">Gender:</label>
         <select name="gender" required>
             <option value="" selected hidden>Select Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
-        </select><br><br>
+        </select>
+      </div>
 
-        <label for="role">Role:</label>
+      <div class="forms">
+      <label for="role">Role:</label>
         <select name="role" required>
             <option value="" selected hidden>Select Role</option>
             <option value="Nurse">Nurse</option>
             <option value="Doctor">Doctor</option>
             <option value="Midwife">Midwife</option>
-        </select><br><br>
+        </select>
+      </div>
 
-        <label for="department">Department:</label>
+     <div class="forms">
+     <label for="department">Department:</label>
         <select name="department" required>
             <option value="" selected hidden>Select Department</option>
             <option value="Emergency">Emergency</option>
@@ -75,12 +93,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <option value="Surgery">Surgery</option>
             <option value="Maternity">Maternity</option>
             <option value="Radiology">Radiology</option>
-        </select><br><br>
+        </select>
+     </div>
 
+        <div class="forms">
         <label for="password">Password:</label>
-        <input type="password" name="password" required><br><br>
-
-        <input type="submit" value="Onboard Staff">
+        <input type="password" name="password" required>
+        </div>
+<div class="forms">
+    <button type="submit" >Onboard Staff</button>
+</div>
+       
     </form>
+  </div>
 </body>
 </html>

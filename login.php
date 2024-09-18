@@ -35,18 +35,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
 <div class="auth_all">
+    <div class="logo"></div>
 <div class="forms">
 <h2>Medistaff Pro - Admin Login</h2>
 </div>
     <form method="POST" action="login.php">
       <div class="forms">
       <label for="username">Username:</label>
-      <input type="text" name="username" required>
+      <input type="text" placeholder="Enter your username" name="username" required>
       </div>
         
      <div class="forms">
      <label for="password">Password:</label>
-     <input type="password" name="password" required>
+     <input type="password" placeholder="Enter your password" name="password" required>
      </div>
         <div class="forms">
             <button type="submit">Login</button>

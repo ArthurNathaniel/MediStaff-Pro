@@ -38,7 +38,7 @@ $department_data = $department_query->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="./css/dashboard.css">
 </head>
 <body>
-  
+<?php include 'admin_navbar.php'?>
 
 
 
