@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt = $conn->prepare("SELECT * FROM admins WHERE username = :username");
     $stmt->bindParam(':username', $username);
     $stmt->execute();
-    
+
     if ($stmt->rowCount() > 0) {
         echo "<script>alert('Username already exists!');</script>";
     } else {
@@ -30,21 +30,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Signup</title>
+    <?php include 'cdn.php'?>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/auth.css">
 </head>
+
 <body>
-    <h2>Admin Signup</h2>
-    <form method="POST" action="signup.php">
-        <label for="username">Username:</label>
-        <input type="text" name="username" required><br><br>
-        
-        <label for="password">Password:</label>
-        <input type="password" name="password" required><br><br>
-        
-        <input type="submit" value="Signup">
-    </form>
+    <div class="auth_all">
+        <div class="logo"></div>
+        <div class="forms">
+        <h2>Admin Signup</h2>
+        </div>
+       
+        <form method="POST" action="signup.php">
+           <div class="forms">
+           <label for="username">Username:</label>
+           <input type="text" name="username" required>
+           </div>
+
+           <div class="forms">
+           <label for="password">Password:</label>
+           <input type="password" name="password" required>
+           </div>
+
+            <div class="forms">
+                <button  type="submit" >Signup</button>
+            </div>
+        </form>
+        </div>
 </body>
+
 </html>
