@@ -52,17 +52,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <form method="POST" action="onboard_staff.php">
        <div class="forms">
        <label for="full_name">Full Name:</label>
-       <input type="text" name="full_name" required>
+       <input type="text" placeholder="Enter your full name" name="full_name" required>
        </div>
 
         <div class="forms">
         <label for="email">Email:</label>
-        <input type="email" name="email" required>
+        <input type="email" placeholder="Enter your email address" name="email" required>
         </div>
 
        <div class="forms">
        <label for="phone_number">Phone Number:</label>
-       <input type="text" name="phone_number" required>
+       <input type="text" placeholder="Enter your phone number" name="phone_number" required>
        </div>
 
       <div class="forms">
@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <div class="forms">
         <label for="password">Password:</label>
-        <input type="password" name="password" required>
+        <input type="password" placeholder="Enter your password" name="password" required>
         </div>
 <div class="forms">
     <button type="submit" >Onboard Staff</button>
